@@ -1,0 +1,24 @@
+Q1. Retrieve FDI data for a specific country (e.g., 'AUS') in a given year (e.g., 2007).
+
+SELECT * FROM FDI_Data
+WHERE Country = 'AUS' AND Year = 2007;
+
+
+Q2. Calculate Total FDI Inflow for each country
+
+SELECT Country, SUM("FDI Inflow Value") AS "Total FDI Inflow"
+FROM FDI_Data
+GROUP BY Country;
+
+Q3. Calculate the average FDI inflow for a specific country
+
+SELECT Country, AVG("FDI Inflow Value") AS "Average FDI Inflow"
+FROM FDI_Data
+GROUP BY Country;
+
+Q4. Identify the year with the highest FDI inflow for Australia(AUS) 
+
+SELECT Country, Year, MAX("FDI Inflow Value") AS "Highest FDI Inflow"
+FROM FDI_Data
+WHERE Country = 'AUS';
+
